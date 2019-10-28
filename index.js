@@ -13,12 +13,42 @@ const PORT = process.env.PORT || 3000;
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-const othersuff="hello there, this is other stuff";
+
+
+var hawkerslogo="./images/header_hawkerslogo.png";
+var cartIcon="./images/header_cartIcon.png";
+
+var  product= [
+    {
+        productNameLastName: "CARBON BLACK",
+        productMainName: "CHROME",
+        glassImageDir:"./images/gafasDeSol_Chrome.png",
+        caracImageDir:"./images/product_Caracteristics.png",
+        productRecomendDir1:"./images/gafasDeSol_Little_Black.png",
+        productRecomendDir2:"./images/gafasDeSol_Little_Blue.png",
+        productRecomendDir3:"./images/gafasDeSol_Little_VioletBlue.png",
+
+
+
+     
+    }
+]
+
+
 
 //set handlebar rutas
 app.get('/', function (req, res) {
     res.render('product',{
-        stuff: othersuff
+        hawkerslogo: hawkerslogo, 
+        cartIcon:cartIcon,
+        productMainName:product[0].productMainName,
+        productNameLastName:product[0].productNameLastName,
+        glassImageDir:product[0].glassImageDir,
+        caracImageDir:product[0].caracImageDir,
+        productRecomendDir1:product[0].productRecomendDir1,
+        productRecomendDir2:product[0].productRecomendDir2,
+        productRecomendDir3:product[0].productRecomendDir3
+
     });
 });
 

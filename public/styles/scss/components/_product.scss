@@ -1,0 +1,135 @@
+
+//PhoneWidth
+$phoneWidth:412px;
+
+$display: flex;
+$flex-direction: column;
+$flex-wrap: nowrap;
+$justify-content: center;
+$align-content: space-between;
+$align-items: center;
+
+$fontFamiliy:Montserrat;
+$font-style: normal;
+
+
+.product{
+    @media screen and (min-width: $phoneWidth) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    .product__1{
+        display: $display;
+        flex-direction: $flex-direction;
+        flex-wrap: $flex-wrap;
+        justify-content: $justify-content;
+        align-content: $align-content;
+        align-items: $align-items;
+        margin-left: 50px;
+       .glassImage{
+        width: 360px;
+        height: 468px;
+        margin-top:70px;
+        margin-bottom: 20px;
+        
+
+       }
+     
+       .buttons{
+
+        display: $display;
+        flex-direction: $flex-direction;
+        flex-wrap: $flex-wrap;
+        justify-content: $justify-content;
+        align-content: $align-content;
+        align-items: $align-items;
+
+         .buttons__buttonBuyNow{
+          text-decoration: none;
+         }
+         .buttons__addToCar{
+            font-family: $fontFamiliy;
+            font-style: $font-style;
+            font-weight: 600;
+            font-size: 10px;
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+
+            color: #74C344;
+         }
+        }
+    }
+
+    .product__2{
+        display: $display;
+        flex-direction: $flex-direction;
+        flex-wrap: $flex-wrap;
+        justify-content:   flex-start;
+        align-content: $align-content;
+        align-items: $align-items;
+        margin-top:-80px;
+        
+
+        .Product__name{
+            display: $display;
+            flex-direction: $flex-direction;
+            flex-wrap: $flex-wrap;
+            justify-content: $justify-content;
+            align-content: stretch;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            margin-left: 15px;
+            margin-top:50px;
+   
+
+            .name__lastname{
+                font-family: $fontFamiliy;
+                font-style: $font-style;
+                font-weight: 600;
+                font-size: 13px;
+                line-height: 22px;
+                margin-bottom:5px;
+
+                color: #9C9C9C;
+            }
+            .name__mainname{
+                margin-top:-10px;
+                font-family: $fontFamiliy;
+                font-style: $font-style;
+                font-weight: bold;
+                font-size: 60px;
+                line-height: 88px;
+                
+                color: #000000;
+            }
+        }
+
+        .Product__caracteristics{
+            margin-top: -80px;
+            margin-left: 50px;
+        }
+
+        .Product__recomendations{
+            font-family: $fontFamiliy;
+           font-style: $font-style;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 29px;
+           color: #000000;
+           margin-left:50px
+        }
+
+    }
+
+  }
+
+}
+
+
+
