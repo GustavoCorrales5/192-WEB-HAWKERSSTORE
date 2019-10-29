@@ -67,7 +67,8 @@
     align-content: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    margin-bottom: 50px; }
     .product .product__1 {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -144,7 +145,8 @@
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      margin-top: -80px; }
+      margin-top: -80px;
+      margin-left: 50px; }
       .product .product__2 .Product__name {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -164,13 +166,12 @@
         -ms-flex-align: start;
         align-items: flex-start;
         margin-bottom: 60px;
-        margin-left: 15px;
         margin-top: 50px; }
         .product .product__2 .Product__name .name__lastname {
           font-family: Montserrat;
           font-style: normal;
           font-weight: 600;
-          font-size: 13px;
+          font-size: 10px;
           line-height: 22px;
           margin-bottom: 5px;
           color: #9C9C9C; }
@@ -179,20 +180,18 @@
           font-family: Montserrat;
           font-style: normal;
           font-weight: bold;
-          font-size: 60px;
+          font-size: 50px;
           line-height: 88px;
           color: #000000; }
       .product .product__2 .Product__caracteristics {
-        margin-top: -80px;
-        margin-left: 50px; }
+        margin-top: -80px; }
       .product .product__2 .Product__recomendations {
         font-family: Montserrat;
         font-style: normal;
         font-weight: 500;
         font-size: 20px;
         line-height: 29px;
-        color: #000000;
-        margin-left: 50px; } }
+        color: #000000; } }
 
 .buttons__buttonBuyNow {
   background: #74C344;
@@ -257,96 +256,90 @@
   height: 300px;
   width: 100%;
   background-color: #202020; }
+  .footer .footer__landing {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+  .footer .footer__info {
+    margin-top: 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .footer .footer__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: right;
+    color: #FFFFFF; }
+  .footer .footer__email {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    width: 40%; }
+  .footer .footer__logo {
+    width: 70%; }
+  .footer .footer__tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .footer .tags {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF; }
+  .footer .tags--left {
+    text-align: right; }
+  .footer .footer__media {
+    margin-left: 15%; }
 
-.footer__landing {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-line-pack: start;
-  align-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start; }
-
-.footer__info {
-  margin-top: 2%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
-.footer__text {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 22px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: right;
-  color: #FFFFFF; }
-
-.footer__email {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #ffffff;
-  width: 40%; }
-
-.footer__logo {
-  width: 70%; }
-
-.footer__tags {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
-.tags {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 22px;
-  color: #FFFFFF; }
-
-.tags--left {
-  text-align: right; }
-
-.footer__media {
-  margin-left: 15%; }
+body {
+  margin: 0px; }

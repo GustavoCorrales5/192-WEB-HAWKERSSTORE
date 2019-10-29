@@ -20,13 +20,13 @@ var cartIcon="./images/header_cartIcon.png";
 
 var  product= [
     {
-        productNameLastName: "CARBON BLACK",
-        productMainName: "CHROME",
-        glassImageDir:"./images/gafasDeSol_Chrome.png",
+        productNameLastName: "FUSION",
+        productMainName: "NEBULA KIDS",
+        glassImageDir:"./images/products/nebula_kids_p.png",
         caracImageDir:"./images/product_Caracteristics.png",
-        productRecomendDir1:"./images/gafasDeSol_Little_Black.png",
-        productRecomendDir2:"./images/gafasDeSol_Little_Blue.png",
-        productRecomendDir3:"./images/gafasDeSol_Little_VioletBlue.png",
+        productRecomendDir1:"./images/products/air_kids_r.png",
+        productRecomendDir2:"./images/products/black_vegas_r.png",
+        productRecomendDir3:"./images/products/crystal_green_r.png",
 
 
 
