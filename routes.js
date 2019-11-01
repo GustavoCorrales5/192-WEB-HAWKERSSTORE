@@ -37,10 +37,32 @@ function createRoutes (app, db) {
             });
 
     });
-    app.get('/product', function (req, res) {
-        res.render('product');
+
+
+    //BUSCO UN PRODUCTO EN BASE A SU ID EN LA BASE DE DATOS Y CARGO EL HANDLEBARS CON SU INFORMACION 
+    app.get('/product/:id', function (req, res) {
+
+        var contexto=null;
+        var query= {};
+        
+        if(req.params.id){
+            query.id= parseInt(req.params.id);
+        }
+
+        var productos = db.collection('products');
+        
+        productos.find(query.id).toArray((err, resultList) => {
+ 
+          
+            console.log(resultList[0]);
+            res.render('product', resultList[0]);
+        });
+
+    
     });
 
+
+        
 }
 
 module.exports = createRoutes;
