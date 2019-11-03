@@ -1,68 +1,282 @@
 const assert = require('assert');
-var hawkerslogo="./images/header_hawkerslogo.png";
-var cartIcon="./images/header_cartIcon.png";
-var  product= [
-    {
-        productNameLastName: "FUSION",
-        productMainName: "NEBULA KIDS",
-        glassImageDir:"/images/products/nebula_kids_p.png",
-        caracImageDir:"/images/product_Caracteristics.png",
-        productRecomendDir1:"/images/products/air_kids_r.png",
-        productRecomendDir2:"/images/products/black_vegas_r.png",
-        productRecomendDir3:"/images/products/crystal_green_r.png",
 
-    }
-]
 
+
+var cartList = [];
 
 function createRoutes (app, db) {
-
-
+    
+    
     //Cargando el home.html 
     app.get('/', (request, response) => {
-        response.sendFile(__dirname + '/public/index.html');
-
-        // seleccionamos la colección que necesitamos
+        response.render('inicio');
+    });
+    
+    
+    app.post('/api/cart/:id', (request, response) => {
+        var id = request.params.id;
         const products = db.collection('products');
-
-        // buscamos todos los productos
+        var query= {};        
+        
+        var esId=false;
         products.find({})
-            // transformamos el cursor a un arreglo
-            .toArray((err, result) => {
-                // asegurarnos de que noh ay error
-                assert.equal(null, err);
+        // transformamos el cursor a un arreglo
+        .toArray((err, result) => {
+            // asegurarnos de que noh ay error
+            
+            //
+            
+            var c=0;
+            var cont=0;
+            for(c;c<result.length;c++){
+                if(request.params.id.toString()===result[c]._id.toString()){
+                    esId=true;         
+                    cartList.push(result[c]);
+                   cont+=1;
+                } 
+            }
+            
+            if(!esId){
+                response.send({
+                    message: 'error',
+                    cartLength: cartList.length
+                });
+                return;
+            }
+            console.log("hijiji");
 
-                //
-                console.log(result[0]);
+            
+            console.log(cartList);
+            response.send({
+                cartLength: cartList.length
             });
 
+        });
+        
+        
+        
     });
-
-
+    
     //BUSCO UN PRODUCTO EN BASE A SU ID EN LA BASE DE DATOS Y CARGO EL HANDLEBARS CON SU INFORMACION 
     app.get('/product/:id', function (req, res) {
-
-        var contexto=null;
-        var query= {};
-        
-        if(req.params.id){
-            query.id= parseInt(req.params.id);
-        }
-
-        var productos = db.collection('products');
-        
-        productos.find(query.id).toArray((err, resultList) => {
- 
-          
-            console.log(resultList[0]);
-            res.render('product', resultList[0]);
+        const products = db.collection('products');
+        var query= {};        
+        products.find({})
+        // transformamos el cursor a un arreglo
+        .toArray((err, result) => {
+            // asegurarnos de que noh ay error
+            
+            //
+            var c=0;
+            for(c;c<result.length;c++){
+                if(req.params.id.toString()===result[c]._id.toString()){
+                    result[c].cartLength= cartList.length,
+                    res.render('product', result[c]);
+                }
+                
+            }
+            
+            
         });
-
+        
+    });
     
+    
+    app.get('/nuevaColeccion', function (req, res) {
+        
+        const products = db.collection('products');
+        products.find({})
+        // transformamos el cursor a un arreglo
+        .toArray((err, result) => {
+            // asegurarnos de que noh ay error
+            
+            
+            var listCopy = result.slice();
+            
+            
+            if(req.query.orderType == 'precio'){
+                listCopy.sort(function(a, b){
+                    return a.price - b.price;
+                });
+            }
+            
+            
+            if(req.query.orderType == 'novedad'){
+                listCopy.sort(function(a, b){
+                    return a.date - b.date;
+                });
+            }
+            
+            
+            if(req.query.orderType == 'popularidad'){
+                listCopy.sort(function(a, b){
+                    return a.popularity - b.popularity;
+                });
+            }
+            
+            if(req.query.filter == 'naranja'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.colorLente==="naranja"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == 'verde'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.colorLente==="verde"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == 'rojo'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.colorLente==="rojo"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == 'rosa'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.colorLente==="rosa"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == 'azul'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.colorLente==="azul"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == 'negro'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.colorLente==="negro"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == 'gris'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.colorLente==="gris"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == 'circular'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.tipoDeMarco==="circular"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            
+            if(req.query.filter == 'cuadrado'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.tipoDeMarco==="cuadrado"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            
+            if(req.query.filter == 'semi-circular'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.tipoDeMarco==="semi-circular"){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == '300'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.uvProtection==400){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            if(req.query.filter == '100'){
+                listCopy = listCopy.filter(function(elem){
+                    if(elem.uvProtection>=100 && elem.uvProtection<400){
+                        return true;
+                    } else {
+                        
+                        return false;
+                    }
+                });
+            }
+            
+            
+            for(var i=0;i<listCopy.length;i++){
+                listCopy[i]._id=listCopy[i]._id.toString();
+            }
+            
+            const context={
+                products:listCopy,
+                cartLength: cartList.length,
+
+                
+            }
+            res.render('store',context);
+            
+        });
+        
     });
 
+    app.get('/carro', function (req, res) {
 
         
+
+            console.log(cartList);
+            res.render('cart',cartList);
+       
+
+    });
+    
+    
+    
 }
 
 module.exports = createRoutes;

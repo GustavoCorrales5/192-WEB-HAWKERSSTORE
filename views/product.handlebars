@@ -9,7 +9,7 @@
                   <p>COMPRAR AHORA</p>
                   </a>
 
-                 <a class="buttons__addToCar" href="#">
+                 <a class="buttons__addToCar"  data-name="{{this._id}}" href="#">
                      <p>AÑADIR AL CARRITO</p>
                  </a>
             
@@ -21,7 +21,11 @@
               <div class="Product__name">
               <p class="name__lastname">{{lastName}}</p>
               <h1 class="name__mainname">{{mainName}}</h1>
+
               </div>
+
+              <p class="name__price">$ {{price}}</p>
+
 
               <img class="Product__caracteristics" src={{caracImageDir}} alt="">
 
@@ -39,6 +43,11 @@
         
 
   </div>
+
+ <script src="/scripts/header.js"></script>
+  <script src="/scripts/product.js"></script>
+
+
 
 
     

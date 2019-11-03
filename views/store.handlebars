@@ -1,5 +1,93 @@
 <div class="store">
 
-    
+    <img class="store__portada" src="/images/store/portada.png" alt="">
 
-</div>
+    <h3 class="store__nameStore">NUEVA<br> COLECCIÓN </h3>
+
+
+    <div class="store__products">
+        <div class="products__filters">
+         
+        
+        <div class="filters__orden">
+         <p class="orden__title">Ordenar por</p>
+         <form action="/nuevaColeccion" method="GET">
+          <select name="orderType">
+        <option value="precio">Precio</option>
+        <option value="novedad">Novedad</option>
+                <option value="popularidad">Popularidad</option>
+
+
+        </select>
+        <button class="filters__enviar" type="submit">Ordenar</button>
+
+         </form>
+        <div class="orden__line"></div>
+          <p class="orden__title">Filtrar por <br> color lente</p>
+             <form action="/nuevaColeccion" method="GET">
+          <select name="filter">
+        <option value="naranja">Naranja</option>
+        <option value="verde">Verde</option>
+                <option value="rojo">Rojo</option>
+                <option value="rosa">Rosa</option>
+                <option value="azul">Azul</option>
+                <option value="negro">Negro</option>
+                <option value="gris">Gris</option>
+
+
+        </select>
+        <button class="filters__enviar" type="submit">Ordenar</button>
+
+         </form>
+        
+
+        <div class="orden__line"></div>
+          <p class="orden__title">Filtrar por marco</p>
+                 <form action="/nuevaColeccion" method="GET">
+          <select name="filter">
+            <option value="circular">Circular</option>
+            <option value="cuadrado">Cuadrado</option>
+            <option value="semi-circular">Semi-circular</option>
+         
+
+        </select>
+        <button class="filters__enviar" type="submit">Ordenar</button>
+
+         </form>
+      
+        <div class="orden__line"></div>
+            <p class="orden__title">Filtrar por <br> protección UV</p>
+                     <form action="/nuevaColeccion" method="GET">
+          <select name="filter">
+            <option value="300">+300</option>
+            <option value="100">+250</option>
+         
+
+        </select>
+        <button class="filters__enviar" type="submit">Ordenar</button>
+
+         </form>
+        <div class="orden__line"></div>
+        </div>
+        </div>
+
+    
+      
+
+     
+        <div class="products__productsMatrix">
+            {{#each products}}
+            
+            <div class="productsMatrix__product">
+             <a href="/product/{{this._id}}" class="productAdd"><img class="productsMatrix__image" src={{glassImageCarrusel}} alt=""></a>
+             <h2 class="productsMatrix__mainName">{{mainName}} </h2>
+            <p class="productsMatrix__price">$ {{price}}</p>
+                 <a class="buttons__addToCar__mini"  data-name="{{this._id}}"href="#">
+                     <p>AÑADIR AL CARRITO</p>
+                 </a>
+            </div>
+            {{/each}}
+        </div>
+   </div>
+
+<script src="/scripts/store.js"></script>

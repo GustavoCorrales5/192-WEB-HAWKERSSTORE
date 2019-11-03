@@ -10,14 +10,15 @@
 </head>
 <body>
 <div class="header">
-    <img class="header__hawkerslogo"src="/images/header_hawkerslogo.png" alt="">
+    <a href="/"><img class="header__hawkerslogo"src="/images/header_hawkerslogo.png" alt=""></a>
     <nav class="header__nav">
-        <p>Nueva colección</p>
+        <a  class="nav__nuevaColeccion" href="/nuevaColeccion"><p>Nueva colección</p></a>
         <p>Nuestras gafas</p>
         <p>Fotos</p>
         <p>Contacto</p>
     </nav>
-    <a class="header__cart" href="#"><img src="/images/header_cartIcon.png" alt=""></a>
+    <a class="header__cart" href="/carro"><img src="/images/header_cartIcon.png" alt=""></a>
+   <p class="cart__count">{{cartLength}}</p>
 </div>
    {{{body}}}
     <footer id="contacto" class="footer">
@@ -60,5 +61,7 @@
                             
                             
                         </footer>
+
+
 </body>
 </html>
