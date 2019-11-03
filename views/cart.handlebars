@@ -1,1 +1,33 @@
 <h1 class="cart__title">Tu carrito</h1>
+
+<div class="cart__products">
+{{#each products}}
+<div class="cart__product">
+<img class="product__image"src={{glassImageCarrusel}} alt="">
+<div class="product__info">
+    <p class="info__lastName">{{lastName}}</p>
+    <h1 class="info__mainName">{{mainName}}</h1>
+     <p class="info__price">$ {{price}}</p>
+</div>
+<div class="product__quantity">
+<p class="quantity__text">Cantidad</p>
+<div class="quantity__buttons">
+    <a href="#" class="buttons__-"><img src="/images/cantidad_-.png" alt=""></a>
+    <p class="quantity__number">{{cantidad}}</p>
+        <a href="#" class="buttons__+"><img src="/images/cantidad_+.png" alt=""></a>
+
+</div>
+</div>
+</div>
+{{/each}}
+
+<div class="cartBuy">
+<p class="cart__total">TOTAL ${{total}}</p>
+      <a href="/checkout" class="buttons__buttonBuyNowF">
+                  <p>COMPRAR AHORA</p>
+                  </a>
+                  </div>
+
+</div>
+
+ <script src="/scripts/header.js"></script>

@@ -1,0 +1,56 @@
+.checkout__title{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 78px;
+    
+    color: #000000;
+    
+    margin-left:100px;
+}
+
+.checkout__datos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 1000px;
+    margin-bottom: 100px;
+    margin-left:100px;  
+    .datos__1{
+        .datos__input{
+            width: 400px;
+            height: 35px;
+        }
+    }
+    
+    .datos__2{
+        .datos__input{
+            width: 400px;
+            height: 35px;
+        }
+    }
+}
+
+.buttons__buttonBuyNowC{
+    
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    
+    color: #000000;
+    text-decoration: none;
+    
+    background: #74C344;
+    width: 217.55px;
+    height: 46px;
+    margin-bottom: 100px;
+    
+    
+}

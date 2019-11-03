@@ -32,7 +32,8 @@ function createRoutes (app, db) {
                 if(request.params.id.toString()===result[c]._id.toString()){
                     esId=true;         
                     cartList.push(result[c]);
-                   cont+=1;
+                    
+                    cont+=1;
                 } 
             }
             
@@ -43,14 +44,13 @@ function createRoutes (app, db) {
                 });
                 return;
             }
-            console.log("hijiji");
-
             
-            console.log(cartList);
+            
+            
             response.send({
                 cartLength: cartList.length
             });
-
+            
         });
         
         
@@ -256,7 +256,7 @@ function createRoutes (app, db) {
             const context={
                 products:listCopy,
                 cartLength: cartList.length,
-
+                
                 
             }
             res.render('store',context);
@@ -264,15 +264,55 @@ function createRoutes (app, db) {
         });
         
     });
-
+    
     app.get('/carro', function (req, res) {
-
         
-
-            console.log(cartList);
-            res.render('cart',cartList);
-       
-
+        
+        var listCopy = cartList.slice();
+        var price=0;
+        var cantidad=0;
+        for(var i=0;i<listCopy.length;i++){
+            price+=listCopy[i].price;
+            
+        }
+        
+        for(var i=0;i<listCopy.length;i++){
+            
+            console.log(listCopy[i]._id.toString());
+            if(listCopy[i+1]!=null){
+                if(listCopy[i]._id.toString()===listCopy[i+1]._id.toString()){
+                    cantidad+=1;
+                    console.log(cantidad);
+                }
+            }
+        }
+        
+        const context={
+            products:listCopy,
+            total:price,
+            cant:cantidad,
+            
+            
+        }
+        
+        
+        res.render('cart',context);
+        
+    });
+    
+    app.get('/checkout', function (req, res) {
+        const products = db.collection('products');
+        var query= {};        
+        
+      
+        res.render('checkout');
+        
+        
+        
+        
+        
+        
+        
     });
     
     

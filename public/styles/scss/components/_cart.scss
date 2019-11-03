@@ -1,0 +1,155 @@
+.cart__title{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 78px;
+    
+    color: #000000;
+    
+    margin-left:100px;
+}
+
+.cart__products{
+    display: grid;
+    grid-template-columns: auto;
+    margin-left:210px;
+    .cart__product{
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        width: 1100px;
+        
+        .product__image{
+            width: 186px;
+            height: 236px;
+            margin-right:80px;
+        }
+        .product__info{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: stretch;
+            align-items: flex-start;
+            
+            .info__lastName{
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                margin-bottom: 0px;
+                color: #9C9C9C;
+                
+            }
+            
+            .info__mainName{
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 50px;
+                line-height: 88px;
+                margin-top:-14px;
+                color: #000000;
+                
+            }
+            
+            .info__price{
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 22px;
+                margin-top:-28px;
+                color: #000000;
+            }
+        }
+        .product__quantity{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-end;
+            align-items: center;
+            margin-left:50px;
+            .quantity__text{
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+                
+                color: #000000;
+                
+            }
+            .quantity__buttons{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                align-content: center;
+                align-items: center;
+                .quantity__number{
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-align: center;
+                    
+                    color: #000000;
+                    margin:10px;
+                    
+                }
+            }
+        }
+    }
+}
+.cartBuy{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-end;
+    align-items: center;
+    margin-right: 50px;
+    .cart__total{
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: right;
+        
+        color: #000000;
+        
+        
+        
+    }
+    
+    .buttons__buttonBuyNowF{
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        
+        color: #ffffff;
+        text-decoration: none;
+        
+        background: #74C344;
+        width: 217.55px;
+        height: 46px;
+        margin-bottom: 100px;
+        
+    }
+}
+
