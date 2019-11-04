@@ -2085,9 +2085,26 @@ body {
     color: #ffffff;
     text-decoration: none;
     background: #74C344;
-    width: 217.55px;
-    height: 46px;
     margin-bottom: 100px; }
+    .cartBuy .buttons__buttonBuyNowF p {
+      background: #74C344;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      color: #FFFFFF;
+      width: 217.55px;
+      height: 20px; }
 
 @media screen and (max-width: 412px) {
   .header--position {
