@@ -554,7 +554,7 @@
           font-family: Montserrat;
           font-style: normal;
           font-weight: bold;
-          font-size: 50px;
+          font-size: 30px;
           line-height: 88px;
           margin-bottom: 10px;
           color: #000000; }
@@ -2089,6 +2089,29 @@ body {
     height: 46px;
     margin-bottom: 100px; }
 
+@media screen and (max-width: 412px) {
+  .header--position {
+    width: 411px; }
+    .header--position .header__hawkerslogo {
+      margin-top: 10px; }
+    .header--position .header__cart {
+      margin-top: 10px; } }
+
+.header--position .header__nav--active {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translate(0%, 0%);
+  -ms-transform: translate(0%, 0%);
+  transform: translate(0%, 0%);
+  background: rgba(51, 52, 53, 0.6);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  height: 180px;
+  top: 0;
+  z-index: 1;
+  width: 250px;
+  margin-left: -80px; }
+
 .checkout__title {
   font-family: Montserrat;
   font-style: normal;
@@ -2097,6 +2120,15 @@ body {
   line-height: 78px;
   color: #000000;
   margin-left: 100px; }
+  @media screen and (max-width: 412px) {
+    .checkout__title {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 78px;
+      color: #000000;
+      margin-left: 50px; } }
 
 .checkout__datos {
   display: -webkit-box;
@@ -2139,6 +2171,50 @@ body {
       -ms-flex-align: end;
       align-items: flex-end;
       color: #8C8C8C; }
+  @media screen and (max-width: 412px) {
+    .checkout__datos {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-bottom: 100px; }
+      .checkout__datos .datos__1 {
+        margin-right: 10px; }
+        .checkout__datos .datos__1 .datos__input {
+          width: 300px;
+          height: 35px; }
+      .checkout__datos .datos__2 {
+        margin-right: 10px; }
+        .checkout__datos .datos__2 .datos__input {
+          width: 300px;
+          height: 35px; }
+          .checkout__datos .datos__2 .datos__input select option {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 22px;
+            /* identical to box height */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: end;
+            -ms-flex-align: end;
+            align-items: flex-end;
+            color: #8C8C8C; } }
 
 .checkout__comprar {
   margin-bottom: 100px;
@@ -2180,6 +2256,48 @@ body {
     color: #FFFFFF;
     width: 217.55px;
     height: 46px; }
+  @media screen and (max-width: 412px) {
+    .checkout__comprar {
+      margin-bottom: 100px;
+      text-decoration: none;
+      text-align: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-line-pack: center;
+      align-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin-left: -10px; }
+      .checkout__comprar p {
+        background: #74C344;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        color: #FFFFFF;
+        width: 217.55px;
+        height: 46px; } }
 
 .titulo {
   font-family: Montserrat;
