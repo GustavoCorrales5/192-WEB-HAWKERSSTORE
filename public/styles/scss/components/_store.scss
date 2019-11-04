@@ -1,5 +1,25 @@
 $phoneWidth:412px;
 
+.header--position {
+    @media screen and (max-width: $phoneWidth) {
+        width: 411px;
+        
+        .header__hawkerslogo{
+            margin-top:10px;
+        }
+        
+        .header__cart{
+            margin-top:10px;
+            
+        }
+        
+    }
+    
+    
+    
+}
+
+
 
 .store__portada{
     @media screen and (min-width: $phoneWidth) {
@@ -7,7 +27,17 @@ $phoneWidth:412px;
         width: 100%;
         margin-bottom: 10px;
     }
+    @media screen and (max-width: $phoneWidth) {
+        
+        width: 100%;
+        margin-bottom: 10px;
+        
+    }
 }
+
+
+
+
 
 .store__nameStore{  
     font-family: Montserrat;
@@ -22,6 +52,24 @@ $phoneWidth:412px;
     margin-right: 523px;
     margin-top:50px;
     color: #000000;
+    
+    @media screen and (max-width: $phoneWidth) {
+        
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 79.4%;
+        /* or 38px */
+        display: flex;
+        align-items: flex-start;
+        letter-spacing: -0.03em;
+        margin-left:41px;
+        margin-right: 114px;
+        
+        color: #000000;
+    }
+    
 }
 
 .store__products{
@@ -52,6 +100,18 @@ $phoneWidth:412px;
         box-sizing: border-box;
         margin-right: 56px;
         
+        @media screen and (max-width: $phoneWidth) {            
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            align-items: flex-start;
+            width: 411px;
+            height: 500px;
+            
+        }
+        
         .filters__orden{
             display: flex;
             flex-direction: column;
@@ -79,6 +139,16 @@ $phoneWidth:412px;
                 width: 171.5px;
                 border: 2px solid #000000;
             }
+            
+            
+            @media screen and (max-width: $phoneWidth) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: flex-start;
+                align-items: flex-start;       
+            }     
             
             
         }
@@ -126,7 +196,7 @@ $phoneWidth:412px;
                 color: #000000;
                 margin-bottom: -5px;
             }
-
+            
             .buttons__addToCar__mini{
                 font-family: $fontFamiliy;
                 font-style: $font-style;
@@ -136,13 +206,32 @@ $phoneWidth:412px;
                 display: flex;
                 align-items: center;
                 text-decoration: none;
-    
+                
                 margin-bottom: 20px;
                 
                 color: #74C344;
-             }
+            }
+            @media screen and (max-width: $phoneWidth) {
+                
+                .productsMatrix__image{
+                    width: 146.69px;
+                    height: 186.32px;
+                }       
+            }
+            
         }
+
+        @media screen and (max-width: $phoneWidth) {
+                
+            margin-top:20px;  
+            display: grid;
+        grid-template-columns: auto auto;
+        }
+  
     }
-    
+    @media screen and (max-width: $phoneWidth) {
+        margin-left:41px;
+        
+    }
     
 }

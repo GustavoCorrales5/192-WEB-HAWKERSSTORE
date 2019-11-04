@@ -6,7 +6,7 @@ $fontweight:350;
 $font-style: normal;
 $font-size: 12px;
 $line-height: 17px;
-
+$pixel2Max:411px;
 
 //PhoneWidth
 $phoneWidth:412px;
@@ -52,14 +52,22 @@ $phoneWidth:412px;
                 padding-left: 47px;
                 padding-right: 47px;
             }
-            
+            .mainheader__btn{
+                background: none;
+                border: none;
+                display: none;
+            }
            
             
         }
+    
     }
+
+ 
 
   
     .cart__count{
+        @media screen and (min-width: $phoneWidth) {
         color: white;
         font-family: $fontFamiliy;
         font-style: $font-style;
@@ -68,7 +76,87 @@ $phoneWidth:412px;
         line-height: $line-height;
         margin-left:-100px;
     }
+}
+@media (max-width: 411px){
+    font-family: $fontFamiliy;
+    font-style: $font-style;
+    font-weight: $fontweight;
+    font-size: $font-size;
+    line-height: $line-height;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+    
+    color: #FFFFFF;
 
+    width: 100%;
+
+    .mainheader__btn{
+        color:#FFFFFF;
+        top:20px;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .header__hawkerslogo{
+        margin-top:20px;
+    }
+
+    .header__nav{
+        font-family: $fontFamiliy;
+        font-style: $font-style;
+        font-weight: $fontweight;
+        font-size: $font-size;
+        line-height: $line-height;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-content: flex-start;
+        align-items: flex-start;
+        position: absolute;
+        opacity: 0;
+        flex-direction: column;
+        pointer-events: none;
+        transform: translate(-100%, 0%);
+
+        .nav__nuevaColeccion{
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+    }
+
+    .header__nav--active{
+        opacity: 1;
+        pointer-events: all;
+        transform: translate(0%, 0%);
+        background: rgba(51, 52, 53, 0.6);
+        backdrop-filter: blur(4px);
+        height: 180px;
+        top: 0;
+        z-index: 1;
+        width: 250px;
+        margin-left:-80px;
+    }
+
+    .header__cart{
+        margin-top:20px;
+
+    }
+
+    .cart__count{
+        margin-top:20px;
+
+    }
+
+
+
+   
+
+
+}
     
 }
 
@@ -116,10 +204,31 @@ $phoneWidth:412px;
            
             
         }
-    }
+        @media screen and (max-width: $pixel2Max) {
+            font-family: $fontFamiliy;
+            font-style: $font-style;
+            font-weight: $fontweight;
+            font-size: $font-size;
+            line-height: $line-height;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-content: flex-start;
+            align-items: flex-start;
+            position: absolute;
+            opacity: 0;
+            flex-direction: column;
+            pointer-events: none;
+            transform: translate(-100%, 0%);
+            
+
+        }
+
+    
 
   
     .cart__count{
+        @media screen and (min-width: $phoneWidth) {
         color: white;
         font-family: $fontFamiliy;
         font-style: $font-style;
@@ -127,7 +236,20 @@ $phoneWidth:412px;
         font-size: $font-size;
         line-height: $line-height;
         margin-left:-100px;
+        }
     }
+
+    @media screen and (max-width: $pixel2Max) {
+        color: white;
+        font-family: $fontFamiliy;
+        font-style: $font-style;
+        font-weight: $fontweight;
+        font-size: $font-size;
+        line-height: $line-height;
+        margin-left:-100px;
+        }
+    }
+
 }
 
 

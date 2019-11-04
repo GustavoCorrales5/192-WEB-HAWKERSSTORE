@@ -1,3 +1,6 @@
+
+$phoneWidth:412px;
+
 .cart__title{
     font-family: Montserrat;
     font-style: normal;
@@ -8,6 +11,19 @@
     color: #000000;
     
     margin-left:100px;
+    
+    @media screen and (max-width: $phoneWidth) {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 78px;
+        
+        color: #000000;
+        
+        margin-left:50px;
+        
+    }
 }
 
 .cart__products{
@@ -110,6 +126,115 @@
                 }
             }
         }
+    }
+    @media screen and (max-width: $phoneWidth) {
+        display: grid;
+        grid-template-columns: auto;
+        margin-left:38px;
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
+        .cart__product{
+            
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            width: 380px;
+            
+            .product__image{
+                width: 144px;
+                height: 183px;
+                margin-right:18px;
+            }
+            .product__info{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: stretch;
+                align-items: flex-start;
+                
+                .info__lastName{
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 12px;
+                    line-height: 22px;
+                    margin-bottom: 0px;
+                    color: #9C9C9C;
+                    
+                }
+                
+                .info__mainName{
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 88px;
+                    margin-top:-14px;
+                    color: #000000;
+                    
+                }
+                
+                .info__price{
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 22px;
+                    margin-top:-28px;
+                    color: #000000;
+                }
+            }
+            .product__quantity{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: flex-start;
+                align-items: center;
+                margin-left:3px;
+                .quantity__text{
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-align: center;
+                    
+                    color: #000000;
+                    
+                }
+                .quantity__buttons{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    align-content: center;
+                    align-items: center;
+                    .quantity__number{
+                        font-family: Montserrat;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 17px;
+                        text-align: center;
+                        
+                        color: #000000;
+                        margin:10px;
+                        
+                    }
+                }
+            }
+        }
+        
     }
 }
 .cartBuy{

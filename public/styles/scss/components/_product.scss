@@ -15,140 +15,268 @@ $font-style: normal;
 
 .product{
     @media screen and (min-width: $phoneWidth) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-
-    .product__1{
-        display: $display;
-        flex-direction: $flex-direction;
-        flex-wrap: $flex-wrap;
-        justify-content: $justify-content;
-        align-content: $align-content;
-        align-items: $align-items;
-        margin-left: 50px;
-       .glassImage{
-        width: 360px;
-        height: 468px;
-        margin-top:70px;
-        margin-bottom: 20px;
-       }
-     
-       .buttons{
-
-        display: $display;
-        flex-direction: $flex-direction;
-        flex-wrap: $flex-wrap;
-        justify-content: $justify-content;
-        align-content: $align-content;
-        align-items: $align-items;
-
-         .buttons__buttonBuyNow{
-          text-decoration: none;
-         }
-         .buttons__addToCar{
-            font-family: $fontFamiliy;
-            font-style: $font-style;
-            font-weight: 600;
-            font-size: 10px;
-            line-height: 12px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-
-            
-            color: #74C344;
-         }
-        }
-    }
-
-    .product__2{
-        display: $display;
-        flex-direction: $flex-direction;
-        flex-wrap: $flex-wrap;
-        justify-content:   flex-start;
-        align-content: flex-start;
-        align-items: flex-start;
-        margin-top:-80px;
-        margin-left: 50px;
-
-
-        .Product__name{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        
+        .product__1{
             display: $display;
             flex-direction: $flex-direction;
             flex-wrap: $flex-wrap;
             justify-content: $justify-content;
-            align-content: stretch;
+            align-content: $align-content;
+            align-items: $align-items;
+            margin-left: 50px;
+            .glassImage{
+                width: 360px;
+                height: 468px;
+                margin-top:70px;
+                margin-bottom: 20px;
+            }
+            
+            .buttons{
+                
+                display: $display;
+                flex-direction: $flex-direction;
+                flex-wrap: $flex-wrap;
+                justify-content: $justify-content;
+                align-content: $align-content;
+                align-items: $align-items;
+                
+                .buttons__buttonBuyNow{
+                    text-decoration: none;
+                }
+                .buttons__addToCar{
+                    font-family: $fontFamiliy;
+                    font-style: $font-style;
+                    font-weight: 600;
+                    font-size: 10px;
+                    line-height: 12px;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    
+                    
+                    color: #74C344;
+                }
+            }
+        }
+        
+        .product__2{
+            display: $display;
+            flex-direction: $flex-direction;
+            flex-wrap: $flex-wrap;
+            justify-content:   flex-start;
+            align-content: flex-start;
             align-items: flex-start;
-            margin-bottom: 0px;
-            margin-top:50px;
-   
-
-            .name__lastname{
+            margin-top:-80px;
+            margin-left: 50px;
+            
+            
+            .Product__name{
+                display: $display;
+                flex-direction: $flex-direction;
+                flex-wrap: $flex-wrap;
+                justify-content: $justify-content;
+                align-content: stretch;
+                align-items: flex-start;
+                margin-bottom: 0px;
+                margin-top:50px;
+                
+                
+                .name__lastname{
+                    font-family: $fontFamiliy;
+                    font-style: $font-style;
+                    font-weight: 600;
+                    font-size: 10px;
+                    line-height: 22px;
+                    margin-bottom:5px;
+                    
+                    color: #9C9C9C;
+                }
+                .name__mainname{
+                    margin-top:-10px;
+                    font-family: $fontFamiliy;
+                    font-style: $font-style;
+                    font-weight: bold;
+                    font-size: 50px;
+                    line-height: 88px;
+                    margin-bottom: 10px;
+                    color: #000000;
+                }
+                
+                
+            }
+            
+            .name__price{
                 font-family: $fontFamiliy;
                 font-style: $font-style;
                 font-weight: 600;
-                font-size: 10px;
+                font-size: 20px;
                 line-height: 22px;
                 margin-bottom:5px;
-
-                color: #9C9C9C;
-            }
-            .name__mainname{
-                margin-top:-10px;
-                font-family: $fontFamiliy;
-                font-style: $font-style;
-                font-weight: bold;
-                font-size: 50px;
-                line-height: 88px;
-                margin-bottom: 10px;
+                margin-top:0px;
+                display: $display;
+                flex-direction: $flex-direction;
+                flex-wrap: $flex-wrap;
+                justify-content: $justify-content;
+                align-content: stretch;
+                align-items: flex-start;
+                
                 color: #000000;
             }
-
+            
+            .Product__caracteristics{
+                margin-top: 0px;
+                
+            }
+            
+            .Product__recomendations{
+                font-family: $fontFamiliy;
+                font-style: $font-style;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 29px;
+                color: #000000;
+                
+            }
             
         }
+        
+    } 
+    
+    @media screen and (max-width: $phoneWidth) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+        
+        .product__1{
+            .glassImage{
+                width: 252px;
+                height: 320px;
+                margin-top:70px;
+                margin-bottom: 20px;
+            }
 
-        .name__price{
-            font-family: $fontFamiliy;
-            font-style: $font-style;
-            font-weight: 600;
-            font-size: 20px;
-            line-height: 22px;
-            margin-bottom:5px;
-            margin-top:0px;
+            .buttons{
+
+                display: $display;
+                flex-direction: $flex-direction;
+                flex-wrap: $flex-wrap;
+                justify-content: $justify-content;
+                align-content: $align-content;
+                align-items: $align-items;
+                
+                .buttons__buttonBuyNow{
+                    text-decoration: none;
+                }
+                .buttons__addToCar{
+                    font-family: $fontFamiliy;
+                    font-style: $font-style;
+                    font-weight: 600;
+                    font-size: 10px;
+                    line-height: 12px;
+                    display: flex;
+                    align-items: center;
+                    text-decoration: none;
+                    
+                    
+                    color: #74C344;
+                }
+            }
+        }
+
+        .product__2{
             display: $display;
-            flex-direction: $flex-direction;
+            flex-direction: column;
             flex-wrap: $flex-wrap;
-            justify-content: $justify-content;
-            align-content: stretch;
-            align-items: flex-start;
-
-            color: #000000;
+            justify-content:   center;
+            align-content: center;
+            align-items: center;
+            margin-top:-60px;
+           
+            
+            
+            .Product__name{
+                display: $display;
+                flex-direction: $flex-direction;
+                flex-wrap: $flex-wrap;
+                justify-content: $justify-content;
+                align-content: stretch;
+                align-items: center;
+                margin-bottom: 0px;
+                margin-top:50px;
+                
+                
+                .name__lastname{
+                    font-family: $fontFamiliy;
+                    font-style: $font-style;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 22px;
+                    margin-bottom:5px;
+                    
+                    color: #9C9C9C;
+                }
+                .name__mainname{
+                    margin-top:-10px;
+                    font-family: $fontFamiliy;
+                    font-style: $font-style;
+                    font-weight: bold;
+                    font-size: 50px;
+                    line-height: 88px;
+                    margin-bottom: 10px;
+                    color: #000000;
+                }
+                
+                
+            }
+            
+            .name__price{
+                font-family: $fontFamiliy;
+                font-style: $font-style;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 22px;
+                margin-bottom:5px;
+                margin-top:0px;
+                display: $display;
+                flex-direction: $flex-direction;
+                flex-wrap: $flex-wrap;
+                justify-content: $justify-content;
+                align-content: stretch;
+                align-items: center;
+                
+                color: #000000;
+            }
+            
+            .Product__caracteristics{
+                margin-top: 0px;
+                
+            }
+            
+            .Product__recomendations{
+                font-family: $fontFamiliy;
+                font-style: $font-style;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 29px;
+                color: #000000;
+                
+            }
+            
         }
-
-        .Product__caracteristics{
-            margin-top: 0px;
-       
-        }
-
-        .Product__recomendations{
-            font-family: $fontFamiliy;
-           font-style: $font-style;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 29px;
-           color: #000000;
-
-        }
-
     }
-
-  }
-
+    
+    
 }
 
 
