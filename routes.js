@@ -14,10 +14,10 @@ function createRoutes (app, db) {
     
     app.post('/api/cartPorduct/:id', (request,response)=>{
         var id = request.params.id;
-
+        
         var listCopy = cartList.slice();
-
-
+        
+        
         var index=listCopy.length;
         for(var c=0;c<listCopy.length;c++){
             if(request.params.id.toString()===listCopy[c]._id.toString()){
@@ -25,9 +25,88 @@ function createRoutes (app, db) {
             }
         }
 
+        var price=0;
+        if(listCopy!=null){
+            for(var i=0;i<listCopy.length;i++){
+                price+=listCopy[i].price*listCopy[i].cantidad;
+                
+            }
+        }
 
+        response.send({
+            totalCount: "TOTAL $"+price,
+        });
+        
+        
+        
     });
-
+    
+    app.post('/api/cartProductLess/:id', (request,response)=>{
+        var id = request.params.id;
+        
+        var listCopy = cartList.slice();
+        
+        var indexProduct;
+        
+        for(var c=0;c<listCopy.length;c++){
+            if(request.params.id.toString()===listCopy[c]._id.toString()){
+                
+                if(cartList[c].cantidad>1){
+                    cartList[c].cantidad-=1;
+                }else if(cartList[c].cantidad==1){
+                    cartList.splice(c,1);
+                }
+                indexProduct=cartList[c].cantidad;
+                
+            }
+        }
+        
+        var price=0;
+        if(listCopy!=null){
+            for(var i=0;i<listCopy.length;i++){
+                price+=listCopy[i].price*listCopy[i].cantidad;
+                
+            }
+        }
+        
+        
+        response.send({
+            productQuantity: indexProduct,
+            totalCount: "TOTAL $"+price,
+        });
+    });
+    
+    app.post('/api/cartProductMore/:id', (request,response)=>{
+        var id = request.params.id;
+        
+        var listCopy = cartList.slice();
+        
+        var indexProduct;
+        
+        for(var c=0;c<listCopy.length;c++){
+            if(request.params.id.toString()===listCopy[c]._id.toString()){
+                cartList[c].cantidad+=1;
+                indexProduct=cartList[c].cantidad;
+                
+                
+            }
+        }
+        
+        var price=0;
+        if(listCopy!=null){
+            for(var i=0;i<listCopy.length;i++){
+                price+=listCopy[i].price*listCopy[i].cantidad;
+                
+            }
+        }
+        
+        
+        response.send({
+            productQuantity: indexProduct,
+            totalCount: "TOTAL $"+price,
+        });
+    });
+    
     app.post('/api/cart/:id', (request, response) => {
         var id = request.params.id;
         const products = db.collection('products');
@@ -36,7 +115,7 @@ function createRoutes (app, db) {
         var esId=false;
         var cont=1;
         var encuentraComun=false;
-
+        
         products.find({})
         // transformamos el cursor a un arreglo
         .toArray((err, result) => {
@@ -51,7 +130,7 @@ function createRoutes (app, db) {
                     for(var i=0;i<cartList.length;i++){
                         
                         if (request.params.id.toString()===cartList[i]._id.toString()){
-
+                            
                             encuentraComun=true;
                             
                             
@@ -305,17 +384,15 @@ function createRoutes (app, db) {
         var price=0;
         var cantidad2=0;
         if(listCopy!=null){
-        for(var i=0;i<listCopy.length;i++){
-            price+=listCopy[i].price*listCopy[i].cantidad;
-            
+            for(var i=0;i<listCopy.length;i++){
+                price+=listCopy[i].price*listCopy[i].cantidad;
+                
+            }
         }
-    }
         
         const context={
             products:listCopy,
             total:price,
-            
-            
         }
         
         
@@ -328,7 +405,6 @@ function createRoutes (app, db) {
         var query= {};        
         
         res.render('checkout');
-  
     });
     
     
