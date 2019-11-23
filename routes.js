@@ -12,13 +12,31 @@ function createRoutes (app, db) {
         response.render('inicio');
     });
     
-    
+    app.post('/api/cartPorduct/:id', (request,response)=>{
+        var id = request.params.id;
+
+        var listCopy = cartList.slice();
+
+
+        var index=listCopy.length;
+        for(var c=0;c<listCopy.length;c++){
+            if(request.params.id.toString()===listCopy[c]._id.toString()){
+                cartList.splice(c,1);
+            }
+        }
+
+
+    });
+
     app.post('/api/cart/:id', (request, response) => {
         var id = request.params.id;
         const products = db.collection('products');
         var query= {};        
         
         var esId=false;
+        var cont=1;
+        var encuentraComun=false;
+
         products.find({})
         // transformamos el cursor a un arreglo
         .toArray((err, result) => {
@@ -27,15 +45,31 @@ function createRoutes (app, db) {
             //
             
             var c=0;
-            var cont=0;
             for(c;c<result.length;c++){
                 if(request.params.id.toString()===result[c]._id.toString()){
-                    esId=true;         
-                    cartList.push(result[c]);
+                    esId=true;  
+                    for(var i=0;i<cartList.length;i++){
+                        
+                        if (request.params.id.toString()===cartList[i]._id.toString()){
+
+                            encuentraComun=true;
+                            
+                            
+                            
+                        } else{
+                            
+                        }
+                    }
+                    if(encuentraComun==true){
+                        cartList[c].cantidad+=1;
+                    }else{
+                        result[c].cantidad=cont;
+                        cartList.push(result[c]);
+                    }
                     
-                    cont+=1;
                 } 
             }
+            
             
             if(!esId){
                 response.send({
@@ -75,7 +109,6 @@ function createRoutes (app, db) {
                 }
                 
             }
-            
             
         });
         
@@ -270,27 +303,17 @@ function createRoutes (app, db) {
         
         var listCopy = cartList.slice();
         var price=0;
-        var cantidad=0;
+        var cantidad2=0;
+        if(listCopy!=null){
         for(var i=0;i<listCopy.length;i++){
-            price+=listCopy[i].price;
+            price+=listCopy[i].price*listCopy[i].cantidad;
             
         }
-        
-        for(var i=0;i<listCopy.length;i++){
-            
-            console.log(listCopy[i]._id.toString());
-            if(listCopy[i+1]!=null){
-                if(listCopy[i]._id.toString()===listCopy[i+1]._id.toString()){
-                    cantidad+=1;
-                    console.log(cantidad);
-                }
-            }
-        }
+    }
         
         const context={
             products:listCopy,
             total:price,
-            cant:cantidad,
             
             
         }
@@ -304,15 +327,8 @@ function createRoutes (app, db) {
         const products = db.collection('products');
         var query= {};        
         
-      
         res.render('checkout');
-        
-        
-        
-        
-        
-        
-        
+  
     });
     
     

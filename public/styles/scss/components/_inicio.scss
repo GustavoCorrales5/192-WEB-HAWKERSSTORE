@@ -29,11 +29,7 @@ body{
     transition: all .6s ease;
     
 }
-.mainheader__btn{
-    background: none;
-    border: none;
-    display: none;
-}
+
 
 @media (max-width: 970px){
     .nav{
@@ -62,13 +58,7 @@ body{
 
   
     
-    .mainheader__btn{
-        color:#FFFFFF;
-        top:20px;
-        display: block;
-        padding-top:25px;
-        padding-left:25px;
-    }
+    
     
     .headerCenter__left{
         transition: opacity .4s;
@@ -650,7 +640,6 @@ body{
         left: 24%;
         opacity: 1;
         text-align: center;
-        
         height: 240px;
         top: 1430px;
     }
