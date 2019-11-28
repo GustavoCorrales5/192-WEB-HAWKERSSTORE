@@ -25,6 +25,9 @@ btnsLess.forEach(function (btn) {
                 total.innerHTML=data.totalCount;
             });
 
+                window.location.reload();
+
+            
     });
 
 });

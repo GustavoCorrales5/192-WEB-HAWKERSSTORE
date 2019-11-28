@@ -406,7 +406,11 @@ function createRoutes (app, db) {
         
         res.render('checkout');
     });
-    
+
+
+    app.get('/3dglass', function (req, res) {
+        res.render('interaction');
+    });    
     
     
 }

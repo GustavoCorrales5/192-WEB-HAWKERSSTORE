@@ -3,10 +3,6 @@ var pic=document.querySelectorAll('.center__image');
   var text=document.querySelectorAll('.interaction__caracteristic');
   var count=0;
   
-  
-  
-  
-
 
 
 setInterval(SwitchPic,4000);
