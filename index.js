@@ -11,6 +11,7 @@ app.engine('handlebars',exphbs());
 app.set('view engine','handlebars');
 
 const assert = require('assert');
+app.use(express.urlencoded());
 
 
 const hostname = '127.0.0.1';

@@ -413,6 +413,44 @@ function createRoutes (app, db) {
     });    
     
     
+    app.post('/comprar', function (request, response) {
+        
+        var listCopy = cartList.slice();
+        var price = 0;
+        var cantidad = 0;
+        console.log(request.body.name);
+
+
+        if(listCopy!=null){
+            for(var i=0;i<listCopy.length;i++){
+                price+=listCopy[i].price*listCopy[i].cantidad;
+                
+            }
+        }
+       
+      
+        var datos = {
+            nombre: request.body.name,
+            direccion:request.body.dir,
+            numeroTarjeta:request.body.trnum,
+            email:request.body.email,
+            tipoTarjeta:request.body.trType,
+            codigoSeguridad:request.body.securityCode,
+            products:cartList,
+            total: price
+            
+        };
+        
+        var collection = db.collection('pedidos');
+
+        collection.insertOne(datos, function (err) {
+            assert.equal(err, null);
+            
+        });     
+     
+
+        response.redirect('/');
+    });
 }
 
 module.exports = createRoutes;

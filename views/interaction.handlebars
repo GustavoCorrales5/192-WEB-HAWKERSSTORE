@@ -1,5 +1,5 @@
 
-  <canvas id="myCanvas"></canvas>
+  <canvas id="interaction__canvas"></canvas>
 
     <script src="three.js"></script>
     <script src="GLTFLoader.js"></script>
@@ -9,7 +9,7 @@
     var renderer,
     	scene,
     	camera,
-    	myCanvas = document.getElementById('myCanvas');
+    	myCanvas = document.getElementById('interaction__canvas');
 
     //RENDERER
     renderer = new THREE.WebGLRenderer({
@@ -18,7 +18,7 @@
     });
     renderer.setClearColor(0xdddddd);
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(window.innerWidth-16, window.innerHeight);
 
     //CAMERA
     camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 5000 );
@@ -49,7 +49,6 @@
 		scene.add( mesh );
         mesh.position.z = -10;
         mesh.position.y=-1;
-        mesh.position.x=-1;
 
     }
 

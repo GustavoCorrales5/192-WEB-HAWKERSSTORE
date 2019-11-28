@@ -1,35 +1,30 @@
 <h1 class="checkout__title">Checkout</h1>
-
+      
+<form action="/comprar/" method="post">
 <div class="checkout__datos">
-    <div class="datos__1">
-        <p class="titulo">Nombre</p>
-        <input class="datos__input"type="text" name="name" placeholder="ej: brayan stiven collazos"><br>
-            <p class="titulo">Direccion de envío</p>
-        <input class="datos__input"type="text" name="name" placeholder="ej: Kra 11 #5-29"><br>
-            <p class="titulo">Número de tarjeta</p>
-        <input class="datos__input"type="text" name="name" placeholder="ej: xxx-xxx-xxx-xxxx"><br>
-
-    </div>
-    <div class="datos__2">
-          <p class="titulo">E-mail</p>
-        <input class="datos__input"type="text" name="name" placeholder="ej: lavacalola@gmail.com"><br>
-            <p class="titulo">Medio de pago</p>
- <form>
-          <select  class="datos__input">
+<div class="datos__1">
+   <p class="titulo"for="checkout__name" class="titulo">Nombre</p>
+    <input  class="datos__input" id="checkout__name" type="text" name="name" placeholder="ej: brayan stiven collazos"> <br>
+   <p class="titulo"for="checkout__dir" class="titulo">Dirección de envío</p>
+    <input  class="datos__input" id="checkout__dir" type="text" name="dir" placeholder="ej: Kra 11 #5-29"><br>
+     <p class="titulo"for="checkout__trNum" class="titulo">Número de tarjeta</p>
+    <input  class="datos__input" id="checkout__trNum" type="text" name="trnum" placeholder="ej: xxx-xxx-xxx-xxxx"><br>
+</div>
+<div class="datos__2">
+      <p class="titulo" for="checkout__email" class="titulo">Email</p>
+      <input  class="datos__input" id="checkout__email" type="text"  name="email" placeholder="ej: lavacalola@gmail.com"><br>
+      <p class="titulo" for="checkout__medioDePago" class="titulo">Medio de pago</p>
+      <select  class="checkout__medioDePago" name="trType">
             <option class="input__option"value="VISA">VISA</option>
             <option class="input__option"value="MASTERCARD">MASTERCARD</option>
-         
+      </select>
+       <p class="titulo" for="checkout__securityCode" class="titulo">Código de seguridad</p>
+      <input  class="datos__input" id="checkout__securityCode" type="text" name="securityCode" placeholder="ej: xxx"><br>
 
-        </select>
-
-         </form>            <p class="titulo">Código de seguridad</p>
-        <input class="datos__input"type="text" name="name" placeholder="ej: xxx"><br>
-    </div>
 </div>
-
-    <a href="/" class="checkout__comprar">
-                  <p>COMPRAR AHORA</p>
-                  </a>
+</div>
+    <input class="checkout__comprar" type="submit" value="COMPRAR">
+</form>
 
  <script src="/scripts/header.js"></script>
 

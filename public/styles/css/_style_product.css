@@ -2157,27 +2157,63 @@ body {
   align-items: center;
   margin-bottom: 100px; }
   .checkout__datos .datos__1 {
+    margin-left: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     margin-right: 50px; }
     .checkout__datos .datos__1 .datos__input {
       width: 400px;
       height: 35px; }
-  .checkout__datos .datos__2 .datos__input {
-    width: 400px;
-    height: 35px; }
-    .checkout__datos .datos__2 .datos__input select option {
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 22px;
-      /* identical to box height */
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: end;
-      -ms-flex-align: end;
-      align-items: flex-end;
-      color: #8C8C8C; }
+  .checkout__datos .datos__2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+    .checkout__datos .datos__2 .datos__input {
+      width: 400px;
+      height: 35px; }
+      .checkout__datos .datos__2 .datos__input select option {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 22px;
+        /* identical to box height */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+        color: #8C8C8C; }
   @media screen and (max-width: 412px) {
     .checkout__datos {
       display: -webkit-box;
@@ -2197,14 +2233,16 @@ body {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-      margin-bottom: 100px; }
+      margin-bottom: 100px;
+      margin-left: -120px; }
       .checkout__datos .datos__1 {
         margin-right: 10px; }
         .checkout__datos .datos__1 .datos__input {
           width: 300px;
           height: 35px; }
       .checkout__datos .datos__2 {
-        margin-right: 10px; }
+        margin-right: 10px;
+        margin-left: 100px; }
         .checkout__datos .datos__2 .datos__input {
           width: 300px;
           height: 35px; }
@@ -2243,26 +2281,20 @@ body {
   align-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
-  .checkout__comprar p {
-    background: #74C344;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    color: #FFFFFF;
-    width: 217.55px;
-    height: 46px; }
+  align-items: center;
+  background: #74C344;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  width: 217.55px;
+  height: 46px;
+  margin-left: 45%; }
   @media screen and (max-width: 412px) {
     .checkout__comprar {
       margin-bottom: 100px;
@@ -2318,6 +2350,7 @@ body {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
+  margin-right: 20px;
   color: #000000; }
 
 ::-webkit-input-placeholder {
