@@ -369,7 +369,6 @@ function createRoutes (app, db) {
                 products:listCopy,
                 cartLength: cartList.length,
                 
-                
             }
             res.render('store',context);
             
