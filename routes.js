@@ -378,7 +378,6 @@ function createRoutes (app, db) {
     
     app.get('/carro', function (req, res) {
         
-        
         var listCopy = cartList.slice();
         var price=0;
         var cantidad2=0;
