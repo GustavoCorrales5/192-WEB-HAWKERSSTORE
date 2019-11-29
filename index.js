@@ -40,5 +40,4 @@ client.connect(function(err) {
 });
 
 
-
 app.listen(PORT,()=>console.log('Server funcionando en el puerto '+PORT))
